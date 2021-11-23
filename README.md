@@ -1,4 +1,6 @@
-# FairEncoder
+
+# FairEncoder 
+
 
 ## Notes 22-Nov
 Add vanilla experiemtn
@@ -18,3 +20,4 @@ Objectives:
 
 Data:
 	- Lawschool
+
