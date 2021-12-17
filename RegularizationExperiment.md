@@ -1,93 +1,32 @@
+Let me first describe the experiments:
+ - Model = LogisticRegression 
+ - TargetEncoderRegularizer = Guassian Noise [0,1]
+ - Data = Compass with 4 caterogical features.
 
-# FairEncoder 
+I have feature engieneered one feature that is highly descriptive EthnicMarital, its a concatenation of the Ethnicity and marital status. It has de following values with each frecuency.
 
+The two groups are
+-  GROUP1 = "African-AmericanSingle" #22416
+- GROUP2 "CaucasianSeparated" #609
 
-## Notes 22-Nov
-Add vanilla experiemtn
+ ![Shap](images/ethnic.png)
 
-Synthetic data
-	One categorical features see the trade-off
-	Easy examples
+Some SHAP xAI
+ ![Shap](images/shap.png)
 
-	One categorical feat + Non categorical
+ ## Regularizing everything
+  ![Shap](images/allreg.png)
 
-Objectives:
-	1. Empirical study - Survey - 
-	2. Role of regularization 
-			tool to be used for fair models
-			trade-off
+  ## Regularizing ONLY Ethnic Marital
+  I notice 2 things
+   - The range of AUC is greater 
+   - The fariness metric is not 0 at any point.
+   ![Shap](images/ethreg.png)
 
-
-Data:
-	- Lawschool
-## Notes 29 Nov
-Target encodings are the industry standard for dealing with high cardinality categorical features. They do statistical aggregations of the target aiming to encode in a ordered categories. This statistical learning technique poses a risk towards bias preservation in machine learning models where categories encode some type of proteceted or discriminative information. 
-
-It has been widely studied in the literature and applied in a plethora of machine learning tasks. However, the impact on fairness when encoding protected attributes
-remains unknown. 
-
-In this work we 
-
-(𝑖) provide a survey of the different regularization methods of categorical variables,
-
- (𝑖𝑖) provide empirical evidence of the accuracy-fairness trade off when encoding categorical data
-
- (𝑖𝑖𝑖) analyze which encoding methods are
-more suitable for bias mitigation procedures while maintaining the model performance.
+## Regularizing ALL but EthnicMarital
+ - AUC is low, and it changes little -- AUC = 0.5 is random guessing
+ - Highly regularized the model is Fair. Since there is no regularization and there is high cardinality, the model is overfitting greatly. The test set is almost random. 
 
 
-#  Introduction
-
-# Background -- Lit review
-## Categorical Encodings (50%)
-## Bias and fairness
-
-
-# Methodology
-
-## Regularization mehods
-### M-estimator
-### Exponential smoothing
-### Gaussian Noise
-### Leave one out??
-
-## Dataset
-### Compass
-### 1 or 2 datasets
-### Synthetical one (cauchy)
-	Something else--
-	Distribution where this is noticeable
-
-
-## Models
-### Linear
-### GBDT
-### NN
-
-## Metrics ???
-
-### Fairness metrics
-	Equality of opportunity
-	Difference of the true positive rate of the 2 groups
-
-	Equalize odds
-	Diference betwee false positive or the groups
-	Diference betwee false negative or the groups
-
-### Accuracy metrics
-	AUC, Accuracy, Recall
-
-# Experiments
-For each regularizadion method
-	for each dataset
-		for each pair of metrics
-			report results
-
-
-
-Experiment 1
-Using previous fairnes metrcis and a couple regularizers
-check accuracy-fairenss tradeoff in compass
-
-
+  ![Shap](images/nonethreg.png)
 
