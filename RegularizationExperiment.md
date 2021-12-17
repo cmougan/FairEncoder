@@ -18,12 +18,14 @@ Some SHAP xAI
  ![Shap](images/shap.png)
 
  ## Regularizing everything
+ 
   ![Shap](images/allreg.png)
 
   ## Regularizing ONLY Ethnic Marital
   I notice 2 things
    - The range of AUC is greater 
    - The fariness metric is not 0 at any point.
+
    ![Shap](images/ethreg.png)
 
 ## Regularizing ALL but EthnicMarital
