@@ -14,6 +14,7 @@ The two selected groups for fairness are
  ![Shap](images/ethnic.png)
 
 Some SHAP xAI
+
  ![Shap](images/shap.png)
 
  ## Regularizing everything
