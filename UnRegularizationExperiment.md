@@ -1,5 +1,3 @@
-# Un/Regularization Experiment
-
 Let me first describe the experiments:
  - Model = LogisticRegression 
  - TargetEncoderRegularizer = Guassian Noise [0,1]
@@ -7,25 +5,23 @@ Let me first describe the experiments:
 
 I have feature engieneered one feature that is highly descriptive EthnicMarital, its a concatenation of the Ethnicity and marital status. It has de following values with each frecuency.
 
-The two selected groups for fairness are
+The two groups are
 -  GROUP1 = "African-AmericanSingle" #22416
 - GROUP2 "CaucasianSeparated" #609
 
  ![Shap](images/ethnic.png)
 
 Some SHAP xAI
-
  ![Shap](images/shap.png)
 
+
  ## Regularizing everything
- 
   ![Shap](images/allreg.png)
 
   ## Regularizing ONLY Ethnic Marital
   I notice 2 things
    - The range of AUC is greater 
    - The fariness metric is not 0 at any point.
-
    ![Shap](images/ethreg.png)
 
 ## Regularizing ALL but EthnicMarital
